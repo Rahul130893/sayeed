@@ -19,10 +19,17 @@ const Main = () => {
   ];
 
     
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen1, setIsOpen1] = useState(false);
 
-    const toggleDropdown = () => {
-      setIsOpen(!isOpen);
+    const toggleDropdown1 = () => {
+      setIsOpen1(!isOpen1);
+    };
+
+
+    const [isOpen2, setIsOpen2] = useState(false);
+
+    const toggleDropdown2 = () => {
+      setIsOpen2(!isOpen2);
     };
 
 
@@ -81,8 +88,28 @@ const Main = () => {
             style={{ fontSize: "20px", fontWeight: "500", marginLeft: "20px" }}
           >
             New Booking Request
+            {isOpen2 && (
+              <div
+                style={{
+                  width: "90%",
+                  border: "1px solid #E3E9ED",
+                  margin: "auto",
+                  backgroundColor: "white",
+                  marginBottom: "30px",
+                  marginTop: "0px",
+                  borderRadius: "5px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <p> booking content here</p>
+              </div>
+            )}
           </p>
-          <button style={{ border: "none", backgroundColor: "transparent" }}>
+          <button
+            style={{ border: "none", backgroundColor: "transparent" }}
+            onClick={toggleDropdown2}
+          >
             <img src={UpArrow} alt="btn" />
           </button>
         </div>
@@ -102,7 +129,7 @@ const Main = () => {
             style={{ fontSize: "20px", fontWeight: "500", marginLeft: "20px" }}
           >
             Analytics
-            {isOpen && (
+            {isOpen1 && (
               <div
                 style={{
                   width: "90%",
@@ -122,7 +149,7 @@ const Main = () => {
           </p>
           <button
             style={{ border: "none", backgroundColor: "transparent" }}
-            onClick={toggleDropdown}
+            onClick={toggleDropdown1}
           >
             <img src={UpArrow} alt="btn" />
           </button>
