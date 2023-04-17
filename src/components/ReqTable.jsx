@@ -37,7 +37,7 @@ const ReqTable = () => {
     },
   ];
   return (
-    <div>
+    <div style={{borderRadius:"20px"}}>
       <table>
         <thead>
           <tr>
