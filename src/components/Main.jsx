@@ -3,7 +3,9 @@ import Earn from "../icons/Earn.svg";
 import UpArrow from "../icons/UpArrow.svg"
 import DownArrow from "../icons/DownArrow.svg"
 import { useState } from "react";
-
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import { Graphs } from "./Graphs";
 const Main = () => {
 
 
@@ -36,15 +38,26 @@ const Main = () => {
 
 
   return (
-    <div style={{ backgroundColor: "#F5F5F5", fontFamily: "Proxima Nova" }}>
+    <div
+      style={{
+        backgroundColor: "#F5F5F5",
+        fontFamily: "Proxima Nova",
+
+        border: "1px solid transparent",
+        height: "944px",
+      }}
+    >
       <div
         style={{
-          width: "1200px",
-          marginLeft: "5%",
+          width: "1136px",
 
+          height: "232px",
           display: "flex",
           flexFlow: "wrap",
-          gap: "20px",
+          gap: "32px",
+          margin: "auto",
+
+          marginTop: "40px",
         }}
       >
         {boxes.map((e) => {
@@ -52,19 +65,44 @@ const Main = () => {
             <div
               style={{
                 display: "flex",
-                gap: "20px",
+                gap: "32px",
                 justifyContent: "space-evenly",
                 border: "2px solid #E3E9ED",
-                width: "250px",
+                width: "256px",
                 borderRadius: "10px",
-                marginTop: "30px",
+
                 backgroundColor: "white",
+                height: "100px",
               }}
             >
-              <img src={e.logo} alt="logo" />
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <p>{e.title}</p>
-                <h3>{e.price}</h3>
+              <div
+                style={{
+                  width: "90%",
+                  height: "80%",
+
+                  margin: "auto",
+                  display: "flex",
+                  justifyContent: "space-evenly",
+                  alignItems: "center",
+                }}
+              >
+                <div>
+                  <img src={e.logo} alt="logo" style={{ height: "52px" }} />
+                </div>
+
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+
+                    height: "90%",
+                    alignItems: "center",
+                    lineHeight: "0px",
+                  }}
+                >
+                  <p>{e.title}</p>
+                  <h3>{e.price}</h3>
+                </div>
               </div>
             </div>
           );
@@ -80,39 +118,48 @@ const Main = () => {
             backgroundColor: "white",
             marginBottom: "30px",
             borderRadius: "5px",
-            display: "flex",
-            justifyContent: "space-between",
           }}
         >
-          <p
-            style={{ fontSize: "20px", fontWeight: "500", marginLeft: "20px" }}
-          >
-            New Booking Request
-            {isOpen2 && (
-              <div
-                style={{
-                  width: "90%",
-                  border: "1px solid #E3E9ED",
-                  margin: "auto",
-                  backgroundColor: "white",
-                  marginBottom: "30px",
-                  marginTop: "0px",
-                  borderRadius: "5px",
-                  display: "flex",
-                  justifyContent: "space-between",
-                }}
-              >
-                <p> booking content here</p>
-              </div>
-            )}
-          </p>
-          <button
-            style={{ border: "none", backgroundColor: "transparent" }}
-            onClick={toggleDropdown2}
-          >
-            <img src={UpArrow} alt="btn" />
-          </button>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <p
+              style={{
+                fontSize: "20px",
+                fontWeight: "500",
+                marginLeft: "20px",
+              }}
+            >
+              New Booking Request
+            </p>
+            <button
+              style={{
+                border: "none",
+                backgroundColor: "transparent",
+                marginRight: "20px",
+              }}
+              onClick={toggleDropdown2}
+            >
+              <img src={UpArrow} alt="btn" />
+            </button>
+          </div>
+          {isOpen2 && (
+            <div
+              style={{
+                width: "90%",
+                border: "1px solid #E3E9ED",
+                margin: "auto",
+                backgroundColor: "white",
+                marginBottom: "30px",
+                marginTop: "0px",
+                borderRadius: "5px",
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <p> booking content here</p>
+            </div>
+          )}
         </div>
+
         <div
           style={{
             width: "90%",
@@ -121,38 +168,46 @@ const Main = () => {
             backgroundColor: "white",
             marginBottom: "30px",
             borderRadius: "5px",
-            display: "flex",
-            justifyContent: "space-between",
           }}
         >
-          <p
-            style={{ fontSize: "20px", fontWeight: "500", marginLeft: "20px" }}
-          >
-            Analytics
-            {isOpen1 && (
-              <div
-                style={{
-                  width: "90%",
-                  border: "1px solid #E3E9ED",
-                  margin: "auto",
-                  backgroundColor: "white",
-                  marginBottom: "30px",
-                  marginTop: "0px",
-                  borderRadius: "5px",
-                  display: "flex",
-                  justifyContent: "space-between",
-                }}
-              >
-                <p> Chart here</p>
-              </div>
-            )}
-          </p>
-          <button
-            style={{ border: "none", backgroundColor: "transparent" }}
-            onClick={toggleDropdown1}
-          >
-            <img src={UpArrow} alt="btn" />
-          </button>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <p
+              style={{
+                fontSize: "20px",
+                fontWeight: "500",
+                marginLeft: "20px",
+              }}
+            >
+              Analytics
+            </p>
+            <button
+              style={{
+                border: "none",
+                backgroundColor: "transparent",
+                marginRight: "20px",
+              }}
+              onClick={toggleDropdown1}
+            >
+              <img src={UpArrow} alt="btn" />
+            </button>
+          </div>
+          {isOpen1 && (
+            <div
+              style={{
+                width: "100%",
+                borderTop: "1px dotted green",
+                margin: "auto",
+                backgroundColor: "white",
+                marginBottom: "30px",
+                marginTop: "0px",
+               
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <p> <Graphs/></p>
+            </div>
+          )}
         </div>
 
         <div
@@ -172,7 +227,13 @@ const Main = () => {
           >
             Latest Reviews
           </p>
-          <button style={{ border: "none", backgroundColor: "transparent" }}>
+          <button
+            style={{
+              border: "none",
+              backgroundColor: "transparent",
+              marginRight: "20px",
+            }}
+          >
             <img src={UpArrow} alt="btn" />
           </button>
         </div>

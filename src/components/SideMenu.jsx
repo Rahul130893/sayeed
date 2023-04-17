@@ -21,6 +21,8 @@ function SideMenu() {
         width: "240px",
         display: "flex",
         flexDirection: "column",
+        fontFamily: "Proxima Nova",
+        height: "944px",
       }}
     >
       <div
@@ -29,21 +31,21 @@ function SideMenu() {
           height: "80px",
           PaddingLeft: "20px",
           display: "flex",
-          justifyContent:"flex-start"
+          justifyContent: "flex-start",
         }}
       >
-        <div style={{width:"20px"}}></div>
+        <div style={{ width: "20px" }}></div>
         <h2>
           <img src={HomeLogo} alt="svgImg" />
         </h2>
       </div>
 
-      <div style={{ height: "700px", borderTop: "2px solid gray" }}>
+      <div style={{ height: "944px", borderTop: "2px solid gray" }}>
         <Sidebar
           width="100%"
           rootStyles={{
             [`.${sidebarClasses.container}`]: {
-              height: "700px",
+              height: "944px",
               backgroundColor: "#292F3B",
               fontFamily: "Proxima Nova",
               fontSize: "20px",
@@ -63,13 +65,14 @@ function SideMenu() {
               },
             }}
           >
-            <MenuItem style={{ background: "#292F3B", color: "white" }}>
+            <MenuItem style={{ background: "#292F3B", color: "green" }}>
               {" "}
               <div
                 style={{
                   width: "80%",
                   display: "flex",
                   gap: "20px",
+                  marginTop: "32px",
                 }}
               >
                 <img src={DashboardLogo} alt="dash logo" />
@@ -168,7 +171,7 @@ function SideMenu() {
                   style={{
                     borderLeft: "2px solid gray",
                     height: "50px",
-                    width: "60%",
+                    width: "40%",
                     alignItems: "center",
                     display: "flex",
                     justifyContent: "center",
@@ -183,7 +186,7 @@ function SideMenu() {
                   style={{
                     borderLeft: "2px solid gray",
                     height: "50px",
-                    width: "60%",
+                    width: "40%",
                     alignItems: "center",
                     display: "flex",
                     justifyContent: "center",
@@ -198,7 +201,7 @@ function SideMenu() {
                   style={{
                     borderLeft: "2px solid gray",
                     height: "50px",
-                    width: "60%",
+                    width: "80%",
                     alignItems: "center",
                     display: "flex",
                     justifyContent: "center",
@@ -213,7 +216,7 @@ function SideMenu() {
                   style={{
                     borderLeft: "2px solid gray",
                     height: "50px",
-                    width: "60%",
+                    width: "80%",
                     alignItems: "center",
                     display: "flex",
                     justifyContent: "center",
