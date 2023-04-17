@@ -6,6 +6,11 @@ import { useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import { Graphs } from "./Graphs";
+import ReqTable from "./ReqTable";
+
+
+
+
 const Main = () => {
 
 
@@ -112,7 +117,7 @@ const Main = () => {
       <div style={{ width: "1200px", marginTop: "50px", height: "300px" }}>
         <div
           style={{
-            width: "90%",
+            width: "1096px",
             border: "1px solid #E3E9ED",
             margin: "auto",
             backgroundColor: "white",
@@ -144,7 +149,7 @@ const Main = () => {
           {isOpen2 && (
             <div
               style={{
-                width: "90%",
+                width: "100%",
                 border: "1px solid #E3E9ED",
                 margin: "auto",
                 backgroundColor: "white",
@@ -155,14 +160,14 @@ const Main = () => {
                 justifyContent: "space-between",
               }}
             >
-              <p> booking content here</p>
+              <ReqTable />
             </div>
           )}
         </div>
 
         <div
           style={{
-            width: "90%",
+            width: "1096px",
             border: "1px solid #E3E9ED",
             margin: "auto",
             backgroundColor: "white",
@@ -200,19 +205,22 @@ const Main = () => {
                 backgroundColor: "white",
                 marginBottom: "30px",
                 marginTop: "0px",
-               
+
                 display: "flex",
                 justifyContent: "space-between",
               }}
             >
-              <p> <Graphs/></p>
+              <p>
+                {" "}
+                <Graphs />
+              </p>
             </div>
           )}
         </div>
 
         <div
           style={{
-            width: "90%",
+            width: "1096px",
             border: "1px solid #E3E9ED",
             margin: "auto",
             backgroundColor: "white",
